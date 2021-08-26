@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+    <div class="header">
+        Welcome to Snap URL Shortener
+    </div>
+    <div class="top">
+        <p id="tag">Shorten bulky URLs in a SNAP!!!</p>
+    </div>
+    <div class="input">
+        <input
+            type="text"
+            placeholder="Paste in the long URL"
+            alt="long url"
+            id="url-input"
+            required
+        />
+        <button id="btn" name="Submit">Get short URL</button>
+    </div>
+    <div id="display"></div>
+    <button id="copy-btn">Copy</button>
+    <div class="footer">
+        URL shortening @ the snap of your fingers...
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

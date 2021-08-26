@@ -1,0 +1,17 @@
+# Notes
+ 
+ Approach
+    A simple  NodeJS express serveer was setup and modularised to incorporate two endpoints, one to post URL data and retrieve shortened URL, and the other, a GET endpoint, to result in a redirect to the original URL when the shortened URL is supplied to it
+
+ Assumptions
+    A general assumption is that the user interface could be a simple html page, that can minimally express the functionality of the API on the backend
+
+ How to
+    The application can be run and tested via the CLI commands on the Makefile
+    i.e. 
+
+    To setup application, run "make"
+
+    To run application, run "make server"
+
+    For unit tests, run "make test"
