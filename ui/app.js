@@ -3,7 +3,9 @@ const actionButton = document.getElementById('btn');
 const display = document.getElementById('display');
 const copyBtn = document.getElementById('copy-btn');
 
-const apiUrl = 'http://localhost:4000';
+// const apiUrl = 'http://localhost:4000';
+const apiUrl = `${window.location.protocol}//${window.location.host}`;
+// console.log(apiUrl);
 
 urlInput.addEventListener('keydown', (e) => {
     urlInput.classList.remove('red');
@@ -15,12 +17,12 @@ actionButton.addEventListener('click', async(e) => {
         urlInput.classList.add('red');
         return;
     };
-
+    
     display.innerHTML = '';
-
+    
     let data;
     try {
-
+        
         const res = await fetch(`${apiUrl}/short`, { 
             method: 'POST',
             headers: {

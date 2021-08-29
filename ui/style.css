@@ -2,7 +2,7 @@ body {
     text-align: center;
     box-sizing: border-box;
     font-family: cursive;
-    background-image: linear-gradient(to right, rgba(34, 216, 216, 0.5), rgba(0, 110, 255, 0.3));    
+    background-image: linear-gradient(to right, rgba(34, 216, 216, 0.5), rgba(0, 110, 255, 0.3));
 }
 
 .top {
@@ -88,4 +88,19 @@ a {
 
 #copy-btn {
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1.3em;   
+    }
+
+    .header, .top {
+        padding: 1em 0.5em;
+    }
+
+    .footer {
+        font-size: 0.8em;
+        padding: 1em 0.5em;
+    }
 }
