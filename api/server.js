@@ -5,6 +5,13 @@ const app = express();
 const router = require('./routes/index');
 const path = require('path');
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, GET');
+  
+    next();
+});
 app.use(morgan('dev'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: false }));
