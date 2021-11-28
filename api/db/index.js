@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
-const dbUri = 'mongodb+srv://obar:animalworld@urlshortener.0ukzi.mongodb.net/urlshortener?retryWrites=true&w=majority';
+const { config } = require('dotenv');
+
+config();
+const dbUri = process.env.DB_URI;
 
 const db = async() => {
-
+    
     try {
         await mongoose.connect(dbUri, {
             useNewUrlParser: true,
@@ -11,7 +14,8 @@ const db = async() => {
         console.log('DB connected');
     } catch (error) {
         console.log('DB connection error');
-        process.exit(1);
+        console.log(dbUri ? '' : 'dburi missing');
+        // process.exit(1);
     }
     
 };
