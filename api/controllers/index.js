@@ -14,7 +14,10 @@ const urlController = {
         try {
             const urlExist = await Url.findOne({ url });
 
-            if(urlExist) return res.json(urlExist);
+            if(urlExist) {
+                console.log('urlExist', urlExist);
+                return res.status(200).json(urlExist);
+            }
             const short = nanoid(5);
             
             const newUrl = new Url({
@@ -23,6 +26,7 @@ const urlController = {
             });
             
             newUrl.save();
+            console.log('newUrl', newUrl);
 
             return res.status(201).json(newUrl);
             
@@ -40,7 +44,8 @@ const urlController = {
         try {
             const url = await Url.findOne({ short });
             if(url) {
-                res.redirect(url.url);
+                console.log('url', url);
+                res.status(200).redirect(url.url);
             } else {
                 return res.status(404).json('Url not available in record');  
             }
